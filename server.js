@@ -7,7 +7,6 @@ const list = [];
 
 const rd = readLine.createInterface({
     input: fs.createReadStream('words.txt'),
-    output: process.stdout,
     console: false
 });
 
