@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const list = [];
+app.set("view engine", "ejs");
 
 const rd = readLine.createInterface({
     input: fs.createReadStream('words.txt'),
@@ -17,8 +18,6 @@ rd.on('line', (line)=>{
     line = line.reverse().join('');
     if(original == line) list.push(line);
 });
-
-app.set("view engine", "ejs");
 
 app.get('/', (req, res)=>{
     res.render('index', {text: list});
