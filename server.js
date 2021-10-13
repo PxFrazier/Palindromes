@@ -11,6 +11,7 @@ const rd = readLine.createInterface({
     console: false
 });
 
+//Processes each line as they are read.
 rd.on('line', (line)=>{
     let original = String(line);
     line = line.split('');
